@@ -16,8 +16,7 @@
     "build-server": "./node_modules/.bin/babel ./server -d ./build -s",
     "clean": "yarn clean-client && yarn clean-server",
     "clean-server": "rm -rf build && mkdir build",
-    "clean-client": "cd client && rm -rf ./build && cd ..",
-    "heroku-postbuild": "yarn install-client && yarn build-client"
+    "clean-client": "cd client && rm -rf ./build && cd .."
   },
   "dependencies": {
     "@babel/cli": "^7.8.4",
