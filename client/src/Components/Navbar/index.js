@@ -1,0 +1,56 @@
+import React from 'react'
+import styled from 'styled-components'
+import { Navbar as NavBar } from 'react-bootstrap'
+
+import SocialList from './SocialList'
+import SectionList from './SectionList'
+
+import logo from './logo.png'
+
+const MyNavBar = styled(NavBar)`
+  background-color: #FFF;
+  /* height: 45px; */
+`
+
+const Spacer = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: 800px;
+
+  margin: auto;
+`
+
+const Contain = styled.div`
+  display: flex;
+  width: max-content;
+`
+
+export const Navbar = ({
+  ...props
+}) => {
+  return (
+    <MyNavBar>
+      <Spacer>
+
+      <MyNavBar.Brand className="justify-self-start">
+        <img
+          alt=""
+          src={logo}
+          width="30"
+          height="30"
+          className="d-inline-block align-top"
+          />
+      </MyNavBar.Brand>
+
+      <Contain>
+        <SectionList />
+        <SocialList />
+      </Contain>
+      </Spacer>
+    </MyNavBar>
+  )
+}
+
+export default Navbar
