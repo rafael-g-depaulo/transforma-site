@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Navbar from 'Components/Navbar'
+import Banner from 'Components/Banner'
 import styled from 'styled-components'
 
 const Rest = styled.div`
@@ -14,6 +15,7 @@ export const Home = ({
 }) => {
   return (<>
     <Navbar />
+    <Banner />
     <Rest>home</Rest>
   </>)
 }
