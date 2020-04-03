@@ -9,6 +9,7 @@ const Container = styled.div`
   /* padding-top: 50px; */
   max-width: ${bodySize};
   margin: auto;
+  padding: 0 2.5%;
 `
 
 const MyText = styled(Text)`

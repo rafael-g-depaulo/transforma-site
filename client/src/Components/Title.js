@@ -7,6 +7,7 @@ const MyTitle = styled.h2`
   font-weight: bold;
   text-align: center;
   color: #452778;
+  margin-bottom: 15px;
 `
 
 export const Title = ({

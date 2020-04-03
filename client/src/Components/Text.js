@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const MyText = styled.h2`
   font-family: 'Open Sans';
-  font-size: 18px;
+  font-size: 20px;
   font-weight: normal;
   text-align: justify;
   color: #000000;

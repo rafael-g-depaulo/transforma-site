@@ -6,7 +6,7 @@ import { bodySize } from 'Themes/default'
 import Title from 'Components/Title'
 import Text from 'Components/Text'
 
-import picture from './mission.png'
+import picture from './vision.png'
 
 const Container = styled.div`
   /* padding-top: 50px; */
@@ -16,11 +16,10 @@ const Container = styled.div`
 
   display: grid;
   
-  grid-template-columns: minmax(auto, 40%) 1fr;
+  grid-template-columns: 1fr minmax(auto, 30%);
   grid-template-rows: 1fr;
   grid-gap: 30px;
-  grid-template-areas: "picture text-area";
-
+  grid-template-areas: "text-area picture";
 `
 
 const TextArea = styled.div`
@@ -37,8 +36,8 @@ const MyTitle = styled(Title)`
   text-align: left;
 `
 
-const missionText = ""
-  + "Propor e executar projetos culturais, em espaços próprios ou em ocupações, visando a máxima satisfação do(s) público(s) e a eficiência e eficácia na aplicação dos recursos dos patrocinadores e apoiadores públicos e privados."
+const visionText = ""
+  + "Consolidar a compreensão de que a Cultura (nas suas diferentes manifestações, linguagens e gêneros artísticos), associada à educação e ao meio ambiente são determinantes no desenvolvimento humano e social e que a Economia Criativa constitui o campo da nossa ação transformadora para o desenvolvimento da economia, associada ao Turismo, a partir da preservação da Memória e da Produção Cultural e Artística das cidades, aberto aos arranjos com entes públicos e privados para a consecução desses propósitos."
 
 export const Mission = ({
   ...props
@@ -47,8 +46,8 @@ export const Mission = ({
     <Container>
       <Picture src={picture}/>
       <TextArea>
-        <MyTitle>Missão</MyTitle>
-        <Text>{missionText}</Text>
+        <MyTitle>Visão</MyTitle>
+        <Text>{visionText}</Text>
       </TextArea>
     </Container>
   )

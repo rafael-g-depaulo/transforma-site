@@ -3,12 +3,13 @@ import styled from 'styled-components'
 
 import Institute from './Institute'
 import Mission from './Mission'
+import Vision from './Vision'
 
 const Spacer = styled.div`
   & > * {
-    margin-top: 50px;
+    margin-top: 80px;
     &:last-child {
-      margin-bottom: 50px;
+      margin-bottom: 80px;
     }
   }
 `
@@ -27,6 +28,7 @@ export const ContentSection = ({
     <Spacer>
       <Institute />
       <Mission />
+      <Vision />
       <Divider />
     </Spacer>
   )
