@@ -1,8 +1,10 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import Navbar from 'Components/Navbar'
 import Banner from 'Components/Banner'
-import styled from 'styled-components'
+
+import ContentSection from './ContentSection'
 
 const Rest = styled.div`
   background-color: red;
@@ -16,7 +18,8 @@ export const Home = ({
   return (<>
     <Navbar />
     <Banner />
-    <Rest>home</Rest>
+    <ContentSection />
+    <Rest></Rest>
   </>)
 }
 

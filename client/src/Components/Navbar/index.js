@@ -6,9 +6,11 @@ import SocialList from './SocialList'
 import SectionList from './SectionList'
 
 import logo from './logo.png'
+import { bodySize } from 'Themes/default'
 
 const MyNavBar = styled(NavBar)`
   background-color: #FFF;
+  font-size: 20px;
   /* height: 45px; */
 `
 
@@ -17,7 +19,7 @@ const Spacer = styled.div`
   justify-content: space-between;
 
   width: 100%;
-  max-width: 800px;
+  max-width: ${bodySize};
 
   margin: auto;
 `
