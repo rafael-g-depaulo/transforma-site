@@ -5,7 +5,7 @@ import banner from './Banner.png'
 
 const Img = styled.img`
   width: 100%;
-  box-shadow: 46px 19.5px 35px 0 rgba(3, 4, 2, 0.1);
+  box-shadow: 16px 9.5px 15px 0 rgba(3, 4, 2, 0.1);
 `
 
 export const Banner = ({
