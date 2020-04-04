@@ -1,1 +1,1 @@
-export const bodySize = "1000px"
+export const bodySize = "1100px"

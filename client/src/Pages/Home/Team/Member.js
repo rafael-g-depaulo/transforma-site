@@ -12,11 +12,11 @@ const Container = styled.div`
   border-radius: 10px;
   box-shadow: 0 0 35px 0 rgba(3, 4, 2, 0.1);
   border: solid 1px #ffffff;
-}
+
 `
 
 const Text = styled.span`
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
@@ -28,6 +28,7 @@ const Name = styled(Text)`
 `
 const Cargo = styled(Text)`
   font-weight: normal;
+  font-size: 20px;
   margin-top: 15px;
 `
 
@@ -44,6 +45,7 @@ const Description = styled.p`
   line-height: 1;
   text-align: justify;
   color: #ffffff;
+  margin-top: 25px;
 `
 
 export const Member = ({
@@ -55,8 +57,8 @@ export const Member = ({
   ...props
 }) => {
   return (
-    <Container color={color}>
-      <Image src={imgSrc ?? process.env.PUBLIC_URL+"/teamImages/Andre.png"}/>
+    <Container color={color} {...props}>
+      <Image alt={name} src={imgSrc ?? process.env.PUBLIC_URL+"/teamImages/Andre.png"}/>
       <Name as="h4">{name ?? "nome"}</Name>
       <Cargo>{cargo ?? "cargo"}</Cargo>
       <Description>{description}</Description>
