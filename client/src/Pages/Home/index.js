@@ -5,6 +5,7 @@ import Navbar from 'Components/Navbar'
 import Banner from 'Components/Banner'
 
 import ContentSection from './ContentSection'
+import Team from './Team'
 
 const Rest = styled.div`
   background-color: red;
@@ -19,6 +20,7 @@ export const Home = ({
     <Navbar />
     <Banner />
     <ContentSection />
+    <Team />
     <Rest></Rest>
   </>)
 }
