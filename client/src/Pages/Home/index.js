@@ -9,7 +9,7 @@ import Team from './Team'
 
 const Rest = styled.div`
   background-color: red;
-  width: 100vw;
+  /* width: 100vw; */
   height: 60vh;
 `
 

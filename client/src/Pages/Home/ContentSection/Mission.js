@@ -21,16 +21,24 @@ const Container = styled.div`
   grid-gap: 30px;
   grid-template-areas: "picture text-area";
 
+  min-height: 200px;
+
 `
 
 const TextArea = styled.div`
   grid-area: text-area;
 `
 
-const Picture = styled.img`
+const Picture = styled.div`
   grid-area: picture;
-  max-width: 100%;
-  object-fit: contain;
+
+  /* max-width: 100%; */
+  /* object-fit: contain; */
+
+  background-image: url("${props => props.src}");
+  background-size: cover;
+  background-position: center;
+
 `
 
 const MyTitle = styled(Title)`

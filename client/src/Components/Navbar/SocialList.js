@@ -30,6 +30,7 @@ const SocialMediaLink = styled(Nav.Link)`
 }
 
   &::before {
+    margin-top: 2px;
     /* position: relative;
     right: 50%;
     margin: auto; */

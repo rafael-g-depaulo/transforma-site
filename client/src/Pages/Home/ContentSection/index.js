@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import Institute from './Institute'
 import Mission from './Mission'
 import Vision from './Vision'
+import Values from './Values'
+import { bodySize } from 'Themes/default'
 
 const Spacer = styled.div`
   & > * {
@@ -12,6 +14,8 @@ const Spacer = styled.div`
       margin-bottom: 80px;
     }
   }
+  max-width: ${bodySize};
+  margin: auto;
 `
 
 const Divider = styled.hr`
@@ -29,6 +33,7 @@ export const ContentSection = ({
       <Institute />
       <Mission />
       <Vision />
+      <Values />
       <Divider />
     </Spacer>
   )
