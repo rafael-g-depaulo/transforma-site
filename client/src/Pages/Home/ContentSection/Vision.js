@@ -26,10 +26,15 @@ const TextArea = styled.div`
   grid-area: text-area;
 `
 
-const Picture = styled.img`
+const Picture = styled.div`
   grid-area: picture;
-  max-width: 100%;
-  object-fit: contain;
+
+  /* max-width: 100%; */
+  /* object-fit: contain; */
+
+  background-image: url("${props => props.src}");
+  background-size: cover;
+  background-position: center;
 `
 
 const MyTitle = styled(Title)`
