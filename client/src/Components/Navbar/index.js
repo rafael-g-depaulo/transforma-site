@@ -29,6 +29,10 @@ const Contain = styled.div`
   width: max-content;
 `
 
+const Img = styled.img`
+  height: 40px;
+`
+
 export const Navbar = ({
   ...props
 }) => {
@@ -37,11 +41,9 @@ export const Navbar = ({
       <Spacer>
 
       <MyNavBar.Brand className="justify-self-start">
-        <img
+        <Img
           alt=""
           src={logo}
-          width="30"
-          height="30"
           className="d-inline-block align-top"
           />
       </MyNavBar.Brand>

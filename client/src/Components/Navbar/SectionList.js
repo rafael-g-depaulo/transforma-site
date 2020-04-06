@@ -23,9 +23,10 @@ export const SectionList = ({
 }) => {
   return (
     <MySectionList {...props}>
-      <Link>asdasdasdfaf</Link>
-      <Link>asdasdasdfaf</Link>
-      <Link>asdasdasdfaf</Link>
+      <Link>O Instituto</Link>
+      <Link>Gestores</Link>
+      <Link>Experiências que se somam</Link>
+      <Link>Contato</Link>
     </MySectionList>
   )
 }
