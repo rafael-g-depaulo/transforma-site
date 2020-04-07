@@ -3,9 +3,12 @@ import styled from 'styled-components'
 
 import Navbar from 'Components/Navbar'
 import Banner from 'Components/Banner'
+import Footer from 'Components/Footer'
+import Divider from 'Components/Divider'
 
 import ContentSection from './ContentSection'
 import Team from './Team'
+import Experiences from './Experiences'
 
 const Rest = styled.div`
   background-color: red;
@@ -20,8 +23,11 @@ export const Home = ({
     <Navbar />
     <Banner />
     <ContentSection />
+    <Divider margin="100px" />
     <Team />
-    <Rest></Rest>
+    <Divider margin="100px" />
+    <Experiences />
+    <Footer />
   </>)
 }
 

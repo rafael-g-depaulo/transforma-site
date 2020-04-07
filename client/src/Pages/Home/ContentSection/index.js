@@ -10,19 +10,9 @@ import { bodySize } from 'Themes/default'
 const Spacer = styled.div`
   & > * {
     margin-top: 80px;
-    &:last-child {
-      margin-bottom: 80px;
-    }
   }
   max-width: ${bodySize};
   margin: auto;
-`
-
-const Divider = styled.hr`
-  width: 156px;
-  height: 2px;
-  opacity: 0.5;
-  background-color: #000000;
 `
 
 export const ContentSection = ({
@@ -34,7 +24,6 @@ export const ContentSection = ({
       <Mission />
       <Vision />
       <Values />
-      <Divider />
     </Spacer>
   )
 }

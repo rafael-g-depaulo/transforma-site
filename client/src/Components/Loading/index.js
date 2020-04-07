@@ -7,7 +7,7 @@ const Center = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh;
 `
 
 const pulse = keyframes`
@@ -35,7 +35,7 @@ export const Loading = ({
 }) => {
   return (
     <Center>
-      <Img src={logo} height="150px" width="150px"/>
+      <Img src={logo} height="auto" width="50%"/>
     </Center>
   )
 }

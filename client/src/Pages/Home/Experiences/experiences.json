@@ -1,0 +1,35 @@
+[
+  { "imgs": [
+    { "src": "Portifolio_Miguel.png", "alt": "Portifólio Miguel"}
+  ], "color": "#452778", "name": "Miguel Ribeiro", "cols": 1 },
+  { "imgs": [
+    { "src": "Portifolio_Sergio_CC.png", "alt": "Portifólio Sergio 1" },
+    { "src": "Portifolio_Sergio_FT.png", "alt": "Portifólio Sergio 2" },
+    { "src": "Portifolio_Sergio_OF.png", "alt": "Portifólio Sergio 3" },
+    { "src": "Portifolio_Sergio_RB.png", "alt": "Portifólio Sergio 4" }
+  ], "color": "#204b9b", "name": "Sérgio Martins", "cols": 2 },
+  { "imgs": [
+    { "src": "Portifolio_Nathalia_LP.png", "alt": "Portifólio Sergio 1" },
+    { "src": "Portifolio_Nathalia_CL.png", "alt": "Portifólio Sergio 1" },
+    { "src": "Portifolio_Nathalia_BD.png", "alt": "Portifólio Sergio 1" },
+    { "src": "Portifolio_Nathalia_L.png", "alt": "Portifólio Sergio 1" }
+  ], "color": "#65b32e", "name": "Nathalia Azoubel", "cols": 2 },
+  { "imgs": [
+    { "src": "Portifolio_Andre_LF.png", "alt": "Portifólio Sergio 1" },
+    { "src": "Portifolio_Andre_MP.png", "alt": "Portifólio Sergio 1" },
+    { "src": "Portifolio_Andre_CB.png", "alt": "Portifólio Sergio 1" },
+    { "src": "Portifolio_Andre_Z.png", "alt": "Portifólio Sergio 1" }
+  ], "color": "#f07e13", "name": "André Luiz Mendes", "cols": 2 },
+  { "imgs": [
+    { "src": "Portifolio_Francisco_QD.png", "alt": "Portifólio Francisco 1" },
+    { "src": "Portifolio_Francisco_AC.png", "alt": "Portifólio Francisco 1" },
+    { "src": "Portifolio_Francisco_CM.png", "alt": "Portifólio Francisco 1" },
+    { "src": "Portifolio_Francisco_SA.png", "alt": "Portifólio Francisco 1" }
+  ], "color": "#e51c20", "name": "Francisco Pessanha", "cols": 2 },
+  { "imgs": [
+    { "src": "Portifolio_Yuri_AB.png", "alt": "Portifólio Yuri 1" },
+    { "src": "Portifolio_Yuri_L.png", "alt": "Portifólio Yuri 1" },
+    { "src": "Portifolio_Yuri_M.png", "alt": "Portifólio Sergio 1" },
+    { "src": "Portifolio_Yuri_.png", "alt": "Portifólio Yuri 1" }
+  ], "color": "#5d4596", "name": "Yuri Rocha", "cols": 2 }
+]
