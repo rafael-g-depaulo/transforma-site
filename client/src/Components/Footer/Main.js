@@ -6,7 +6,7 @@ import Contact from './Contact'
 import LogoSection from './LogoSection'
 
 const Container = styled.div`
-  padding: 40px 70px;
+  padding: 40px 70px 10px 70px;
   background-color: rgb(31,31,31);
   color: #FFFFFF;
 
