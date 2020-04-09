@@ -1,5 +1,4 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useRef } from 'react'
 
 import Navbar from 'Components/Navbar'
 import Banner from 'Components/Banner'
@@ -9,13 +8,6 @@ import Divider from 'Components/Divider'
 import ContentSection from './ContentSection'
 import Team from './Team'
 import Experiences from './Experiences'
-import { useRef } from 'react'
-
-const Rest = styled.div`
-  background-color: red;
-  /* width: 100vw; */
-  height: 60vh;
-`
 
 export const Home = ({
   ...props

@@ -12,6 +12,7 @@ export const Team = forwardRef(({
   gestoresRef
 ) => {
 
+  // eslint-disable-next-line
   const [ members, setMembers ] = useState(memberInfo)
 
   return (<div ref={gestoresRef}>
