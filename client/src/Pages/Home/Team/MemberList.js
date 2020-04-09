@@ -39,9 +39,9 @@ export const MemberList = ({
   return (
     <Grid {...props}>
       {groupedData.map(column => (
-        <List>
-          {column.map(({ imgSrc, ...props }) => (
-            <MyMember {...props} imgSrc={`${process.env.PUBLIC_URL}/teamImages/${imgSrc}.png`}/>
+        <List key={column[0].name}>
+          {column.map(({ imgSrc, ...rest }) => (
+            <MyMember key={rest.name} {...rest} imgSrc={`${process.env.PUBLIC_URL}/teamImages/${imgSrc}.png`}/>
           ))}
         </List>
       ))}

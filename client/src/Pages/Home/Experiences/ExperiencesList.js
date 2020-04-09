@@ -38,9 +38,9 @@ export const ExperiencesList = ({
   return (
     <Grid {...props}>
       {data.map(list => (
-        <List>
+        <List key={list[0].name}>
           {list.map(({ ...exProps }) => (
-            <MyExperience {...exProps}/>
+            <MyExperience key={exProps.name} {...exProps}/>
           ))}
         </List>
       ))}

@@ -58,7 +58,7 @@ export const Values = ({
         <MyTitle>Valores</MyTitle>
         <ValueContainer>
           {values.map((value, i) => (
-            <Value color2={colors[i % colors.length]}>{value}</Value>
+            <Value key={value} color2={colors[i % colors.length]}>{value}</Value>
           ))}
         </ValueContainer>
       </TextArea>

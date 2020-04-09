@@ -10,10 +10,11 @@ const Grid = styled.div`
 `
 
 export const Footer = ({
+  contatoRef,
   ...props
 }) => {
   return (
-    <Grid>
+    <Grid ref={contatoRef}>
       <Main />
       <Copyright />
     </Grid>

@@ -4,16 +4,19 @@ import MemberList from './MemberList'
 
 import memberInfo from './memberInfo'
 import { useState } from 'react'
+import { forwardRef } from 'react'
 
-export const Team = ({
-  ...props
-}) => {
+export const Team = forwardRef(({
+    ...props
+  },
+  gestoresRef
+) => {
 
   const [ members, setMembers ] = useState(memberInfo)
 
-  return (<>
+  return (<div ref={gestoresRef}>
     <MemberList members={members}/>
-  </>)
-}
+  </div>)
+})
 
 export default Team
