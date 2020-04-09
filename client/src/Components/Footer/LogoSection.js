@@ -11,7 +11,8 @@ const Logo = styled.img`
   width: 100%;
   object-fit: contain;
 
-  filter: contrast(0) brightness(10);
+  /* not necessary if using a white picture */
+  /* filter: contrast(0) brightness(10); */
 `
 
 export const LogoSection = ({
