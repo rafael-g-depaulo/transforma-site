@@ -49,7 +49,8 @@ export const Navbar = ({
       </MyNavBar.Brand>
 
       <Contain>
-        <SectionList />
+        {/* pass refs to section list */}
+        <SectionList {...props}/>
         <SocialList />
       </Contain>
       </Spacer>

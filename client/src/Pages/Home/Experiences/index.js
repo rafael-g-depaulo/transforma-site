@@ -25,6 +25,7 @@ const text = ""
   + "executores. São produtores, artistas e dirigentes que se unem em prol do desenvolvimento da Economia Criativa, da Cultura, da Educação, do Meio Ambiente, do Esporte e do Turismo."
 
 export const Experiences = ({
+  experienciasRef,
   ...props
 }) => {
 
@@ -36,7 +37,7 @@ export const Experiences = ({
     ...rest
   }))
 
-  return (<Container>
+  return (<Container ref={experienciasRef}>
     <Title>Experiências que se somam</Title>
     <MyText columns="2">{text}</MyText>
     <ExperiencesList experiences={experiences} {...props} />

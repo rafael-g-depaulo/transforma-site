@@ -50,6 +50,7 @@ export const Experience = ({
       <ImageContainer cols={cols}>
         {imgs.map(({ alt, src }) => (
           <Image
+            key={src}
             src={src}
             alt={alt}
           />

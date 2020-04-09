@@ -1,5 +1,4 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useRef } from 'react'
 
 import Navbar from 'Components/Navbar'
 import Banner from 'Components/Banner'
@@ -10,24 +9,24 @@ import ContentSection from './ContentSection'
 import Team from './Team'
 import Experiences from './Experiences'
 
-const Rest = styled.div`
-  background-color: red;
-  /* width: 100vw; */
-  height: 60vh;
-`
-
 export const Home = ({
   ...props
 }) => {
+
+  const institutoRef = useRef()
+  const gestoresRef = useRef()
+  const experienciasRef = useRef()
+  const contatoRef = useRef()
+
   return (<>
-    <Navbar />
+    <Navbar institutoRef={institutoRef} gestoresRef={gestoresRef} experienciasRef={experienciasRef} contatoRef={contatoRef}/>
     <Banner />
-    <ContentSection />
+    <ContentSection ref={institutoRef} />
     <Divider margin="100px" />
-    <Team />
+    <Team ref={gestoresRef}/>
     <Divider margin="100px" />
-    <Experiences />
-    <Footer />
+    <Experiences experienciasRef={experienciasRef}/>
+    <Footer contatoRef={contatoRef}/>
   </>)
 }
 
