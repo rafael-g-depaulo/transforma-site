@@ -3196,14 +3196,6 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
 
-bootstrap-react@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/bootstrap-react/-/bootstrap-react-0.3.1.tgz#ac8be3ede3191da61ae31cd8d2f53d3623fce1b4"
-  integrity sha512-Xu23PyNEfiVy1mtWTW4lgkJe5mB+6pRX3jWg3pq3UeZnQiFQ82r6dCOg0hsWn+/0E6GWrMn5KkWEQ59VzZ8hbg==
-  dependencies:
-    prop-types "^15.6.0"
-    react "^16.1.1"
-
 boxen@^4.1.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/boxen/-/boxen-4.2.0.tgz#e411b62357d6d6d36587c8ac3d5d974daa070e64"
@@ -10472,15 +10464,6 @@ react-transition-group@^4.0.0:
     "@babel/runtime" "^7.5.5"
     dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
-    prop-types "^15.6.2"
-
-react@^16.1.1:
-  version "16.13.1"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
-  integrity sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
     prop-types "^15.6.2"
 
 react@^16.13.0, react@^16.8.3:

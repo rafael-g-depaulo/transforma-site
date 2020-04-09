@@ -19,6 +19,7 @@ const SocialMediaLink = styled(Nav.Link)`
   padding: 8px;
   font-size: 20px;
   width: 36px;
+  height: 36px;
   border-radius: 50%;
   text-decoration: none;
   margin: 5px;
@@ -27,14 +28,6 @@ const SocialMediaLink = styled(Nav.Link)`
   display: flex;
   justify-content: center;
 
-}
-
-  &::before {
-    margin-top: 2px;
-    /* position: relative;
-    right: 50%;
-    margin: auto; */
-  }
 `
 
 export const SocialList = ({
