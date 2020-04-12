@@ -6,12 +6,16 @@ import SocialList from './SocialList'
 import SectionList from './SectionList'
 
 import logo from './logo.png'
-import { bodySize } from 'Themes/default'
+import { bodySize, navHeight } from 'Themes/default'
 
 const MyNavBar = styled(NavBar)`
   background-color: #FFF;
   font-size: 20px;
-  /* height: 45px; */
+  height: ${navHeight};
+
+  position: fixed;
+  top: 0;
+  width: 100%;
 `
 
 const Spacer = styled.div`

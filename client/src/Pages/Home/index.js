@@ -8,6 +8,12 @@ import Divider from 'Components/Divider'
 import ContentSection from './ContentSection'
 import Team from './Team'
 import Experiences from './Experiences'
+import styled from 'styled-components'
+import { navHeight } from 'Themes/default'
+
+const Body = styled.div`
+  padding-top: ${navHeight};
+`
 
 export const Home = ({
   ...props
@@ -18,7 +24,7 @@ export const Home = ({
   const experienciasRef = useRef()
   const contatoRef = useRef()
 
-  return (<>
+  return (<Body>
     <Navbar institutoRef={institutoRef} gestoresRef={gestoresRef} experienciasRef={experienciasRef} contatoRef={contatoRef}/>
     <Banner />
     <ContentSection ref={institutoRef} />
@@ -27,7 +33,7 @@ export const Home = ({
     <Divider margin="100px" />
     <Experiences experienciasRef={experienciasRef}/>
     <Footer contatoRef={contatoRef}/>
-  </>)
+  </Body>)
 }
 
 export default Home
