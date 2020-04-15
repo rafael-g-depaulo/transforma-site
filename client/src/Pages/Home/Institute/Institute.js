@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import Text from 'Components/Text'
 import Title from 'Components/Title'
 import { bodySize } from 'Themes/default'
-import { Element } from 'react-scroll'
 
 const Container = styled.div`
   /* padding-top: 50px; */
@@ -25,13 +24,11 @@ export const Institute = ({
   ...props
 }) => {
   return (
-    <Element name="Institute">
-      <Container>
-        <Title>O Instituto</Title>
-        {/* <MyText >{InstituteText}</MyText> */}
-        <MyText columns="2">{InstituteText}</MyText>
-      </Container>
-    </Element>
+    <Container>
+      <Title>O Instituto</Title>
+      {/* <MyText >{InstituteText}</MyText> */}
+      <MyText columns="2">{InstituteText}</MyText>
+    </Container>
   )
 }
 

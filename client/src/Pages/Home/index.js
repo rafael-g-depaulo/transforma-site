@@ -5,7 +5,7 @@ import Banner from 'Components/Banner'
 import Footer from 'Components/Footer'
 import Divider from 'Components/Divider'
 
-import ContentSection from './ContentSection'
+import Institute from './Institute'
 import Team from './Team'
 import Experiences from './Experiences'
 import styled from 'styled-components'
@@ -22,7 +22,7 @@ export const Home = ({
   return (<Body>
     <Navbar />
     <Banner />
-    <ContentSection />
+    <Institute />
     <Divider margin="100px" />
     <Team />
     <Divider margin="100px" />

@@ -26,12 +26,12 @@ export const SectionLink = ({
   return (
     <Link 
       {...props}
-      duration="300"
-      delay="100"
+      duration="900"
+      delay="0"
       offset={-parseInt(navHeight)}
       activeClass="active"
       spy
-      smooth
+      smooth="easeInOutQuint"
     >
       <NavLink>{children}</NavLink>
     </Link>

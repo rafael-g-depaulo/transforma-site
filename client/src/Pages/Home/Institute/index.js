@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Institute from './Institute'
+import InstituteIntro from './Institute'
 import Mission from './Mission'
 import Vision from './Vision'
-import Values from './Values'
+import Values from '../ContentSection/Values'
 import { bodySize } from 'Themes/default'
+import { Element } from 'react-scroll'
 
-const Spacer = styled.div`
+const Container = styled(Element)`
   & > * {
     margin-top: 80px;
   }
@@ -19,12 +20,12 @@ export const ContentSection = ({
   ...props
 }) => {
   return (
-    <Spacer>
-      <Institute />
+    <Container name="Institute">
+      <InstituteIntro />
       <Mission />
       <Vision />
       <Values />
-    </Spacer>
+    </Container>
   )
 }
 
