@@ -52,7 +52,7 @@ export const Values = ({
         <MyTitle>Valores</MyTitle>
         <ValueContainer>
           {values.map(value => (
-            <Value label={value} />
+            <Value key={value} label={value} />
           ))}
         </ValueContainer>
       </TextArea>
