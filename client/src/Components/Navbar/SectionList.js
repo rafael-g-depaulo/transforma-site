@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Nav from 'react-bootstrap/Nav'
 import { useCallback } from 'react'
+import { navHeight } from 'Themes/default'
 
 const MySectionList = styled.div`
   display: flex;
@@ -29,7 +30,7 @@ export const SectionList = ({
 
   const scrollTo = useCallback((ref) => {
     console.log("Asdsadasd")
-    window.scrollTo(0, ref.current.offsetTop)   
+    window.scrollTo(0, ref.current.offsetTop - parseInt(navHeight))   
   }, [])
   return (
     <MySectionList {...props}>
