@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 
 import Navbar from 'Components/Navbar'
 import Banner from 'Components/Banner'
@@ -19,20 +19,15 @@ export const Home = ({
   ...props
 }) => {
 
-  const institutoRef = useRef()
-  const gestoresRef = useRef()
-  const experienciasRef = useRef()
-  const contatoRef = useRef()
-
   return (<Body>
-    <Navbar institutoRef={institutoRef} gestoresRef={gestoresRef} experienciasRef={experienciasRef} contatoRef={contatoRef}/>
+    <Navbar />
     <Banner />
-    <ContentSection ref={institutoRef} />
+    <ContentSection />
     <Divider margin="100px" />
-    <Team ref={gestoresRef}/>
+    <Team />
     <Divider margin="100px" />
-    <Experiences experienciasRef={experienciasRef}/>
-    <Footer contatoRef={contatoRef}/>
+    <Experiences />
+    <Footer />
   </Body>)
 }
 
