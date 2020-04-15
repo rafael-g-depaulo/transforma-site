@@ -21,8 +21,8 @@ const MyText = styled(Text)`
 `
 
 const text = ""
-  + "O maior capital do Instituto Transforma é a experiência acumulada dos seus gestores e gestoras no campo da Cultura. Todes são Agentes Culturais diretamente ligados à produção artística do DF, como proponentes e/ou executores. São produtores, artistas e dirigentes que se unem em prol do desenvolvimento da Economia Criativa, da Cultura, da Educação, do Meio Ambiente, do Esporte e do Turismo."
-  + "executores. São produtores, artistas e dirigentes que se unem em prol do desenvolvimento da Economia Criativa, da Cultura, da Educação, do Meio Ambiente, do Esporte e do Turismo."
+  + "O maior capital do Instituto Transforma é a experiência acumulada dos seus gestores e gestoras no campo da Cultura. Todes são Agentes Culturais diretamente ligados à produção artística do DF, como proponentes e/ou executores."
+  + " São produtores, artistas e dirigentes que se unem em prol do desenvolvimento da Economia Criativa, da Cultura, da Educação, do Meio Ambiente, do Esporte e do Turismo."
 
 export const Experiences = ({
   experienciasRef,
