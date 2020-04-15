@@ -23,6 +23,8 @@ const Img = styled.img`
   position: relative;
   bottom: 0.4em;
   right: 5px;
+
+  z-index: 3;
 `
 
 const Container = styled.div`

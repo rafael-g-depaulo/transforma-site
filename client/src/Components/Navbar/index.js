@@ -13,6 +13,8 @@ const MyNavBar = styled(NavBar)`
   font-size: 20px;
   height: ${navHeight};
 
+  z-index: 10;
+
   position: fixed;
   top: 0;
   width: 100%;
