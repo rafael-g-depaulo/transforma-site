@@ -56,7 +56,7 @@ export const Navbar = ({
 
       <Contain>
         {/* pass refs to section list */}
-        <SectionList {...props}/>
+        <SectionList />
         <SocialList />
       </Contain>
       </Spacer>

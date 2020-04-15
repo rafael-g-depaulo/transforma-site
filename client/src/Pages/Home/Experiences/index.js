@@ -8,8 +8,9 @@ import { bodySize } from 'Themes/default'
 import ExperiencesList from './ExperiencesList'
 
 import rawExperiences from './experiences'
+import { Element } from 'react-scroll'
 
-const Container = styled.div`
+const Container = styled(Element)`
   max-width: ${bodySize};
   margin: auto;
   margin-bottom: 200px;
@@ -37,7 +38,7 @@ export const Experiences = ({
     ...rest
   }))
 
-  return (<Container ref={experienciasRef}>
+  return (<Container name="Experiences">
     <Title>Experiências que se somam</Title>
     <MyText columns="2">{text}</MyText>
     <ExperiencesList experiences={experiences} {...props} />
