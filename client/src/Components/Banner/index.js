@@ -1,7 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import useWidth from 'Hooks/useWidth'
+
+import { LargeBreakpoint } from 'Themes/default'
 
 import banner from './Banner.png'
+import mobile from './Mobile.png'
 
 const Img = styled.img`
   width: 100%;
@@ -11,8 +15,14 @@ const Img = styled.img`
 export const Banner = ({
   ...props
 }) => {
+
+  const width = useWidth()
+
   return (
-    <Img src={banner} alt="banner do instituto transforma"/>
+    <Img
+      src={width >= parseInt(LargeBreakpoint) ? banner : mobile}
+      alt="banner do instituto transforma"
+    />
   )
 }
 
