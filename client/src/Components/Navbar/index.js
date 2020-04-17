@@ -7,6 +7,7 @@ import SectionList from './SectionList'
 
 import logo from './logo.png'
 import { bodySize, navHeight } from 'Themes/default'
+import { Link } from 'react-scroll'
 
 const MyNavBar = styled(NavBar)`
   background-color: #FFF;
@@ -39,6 +40,12 @@ const Img = styled.img`
   height: 40px;
 `
 
+const MyLink = styled(Link)`
+  &:hover {
+    cursor: pointer;
+  }
+`
+
 export const Navbar = ({
   ...props
 }) => {
@@ -46,13 +53,23 @@ export const Navbar = ({
     <MyNavBar>
       <Spacer>
 
-      <MyNavBar.Brand className="justify-self-start">
-        <Img
-          alt=""
-          src={logo}
-          className="d-inline-block align-top"
-          />
-      </MyNavBar.Brand>
+      <MyLink
+        to="Banner"
+        duration="900"
+        delay="0"
+        offset={-parseInt(navHeight)}
+        activeClass="active"
+        spy
+        smooth="easeInOutQuint"  
+      >
+        <MyNavBar.Brand className="justify-self-start">
+          <Img
+            alt=""
+            src={logo}
+            className="d-inline-block align-top"
+            />
+        </MyNavBar.Brand>
+      </MyLink>
 
       <Contain>
         {/* pass refs to section list */}
