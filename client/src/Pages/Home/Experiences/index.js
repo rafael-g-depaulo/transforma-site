@@ -15,7 +15,10 @@ const Container = styled(Element)`
   max-width: ${bodySize};
   padding: ${bodyPadding};
   margin: auto;
-  margin-bottom: 200px;
+  
+  @media (min-width: ${LargeBreakpoint}) {
+    margin-bottom: 200px;
+  }
 `
 
 const MyText = styled(Text)`

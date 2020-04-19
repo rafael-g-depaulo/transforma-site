@@ -3,21 +3,51 @@ import styled from 'styled-components'
 
 import Title from './Title'
 import Text from './Text'
+import { LargeBreakpoint } from 'Themes/default'
 
 const MyContact = styled.div`
-  grid-area: "contact";
+  grid-area: contact;
+
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: ${LargeBreakpoint}) {
+    display: inherit;
+  }
 `
 
 const MyTitle = styled(Title)`
 `
 
+const MyText = styled(Text)`
+
+  margin: 0;
+
+  @media (min-width: ${LargeBreakpoint}) {
+    margin: inherit
+  }
+`
+
 const MyItem = styled.div`
+  width: max-content;
+
   &:not(:last-child) {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
 
   ${MyTitle} {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+  }
+
+  @media (min-width: ${LargeBreakpoint}) {
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+
+    ${MyTitle} {
+      margin-bottom: 20px;
+    }
   }
 `
 
@@ -27,7 +57,7 @@ const Item = ({
 }) => (
   <MyItem>
     <MyTitle>{title}</MyTitle>
-    <Text>{text}</Text>
+    <MyText>{text}</MyText>
   </MyItem>
 )
 

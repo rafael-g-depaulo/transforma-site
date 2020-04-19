@@ -33,7 +33,7 @@ export const Home = ({
     <Team />
     <Divider margin={dividerMargin} />
     <Experiences />
-    {/* <Footer /> */}
+    <Footer />
   </Body>)
 }
 
