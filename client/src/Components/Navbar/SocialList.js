@@ -1,9 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Nav } from 'react-bootstrap'
+import { LargeBreakpoint } from 'Themes/default'
 
 const MySocialList = styled.div`
   display: flex;
+
+  position: absolute;
+  left: 47%;
+  top: 20px;
+
+  @media (min-width: ${LargeBreakpoint}) {
+    position: static;
+  }
 `
 
 const SocialMediaLink = styled(Nav.Link)`
@@ -16,13 +25,24 @@ const SocialMediaLink = styled(Nav.Link)`
     color: #bbbbbb;
   }
   
-  padding: 8px;
-  font-size: 20px;
-  width: 36px;
-  height: 36px;
+  /* mobile */
+  padding: 6px;
+  font-size: 17px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   text-decoration: none;
   margin: 5px;
+  
+  @media (min-width: ${LargeBreakpoint}) {
+    padding: 8px;
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    text-decoration: none;
+    margin: 5px;
+  }
 
   /* center icon */
   display: flex;

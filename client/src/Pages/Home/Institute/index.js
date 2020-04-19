@@ -24,7 +24,7 @@ export const ContentSection = ({
       <InstituteIntro />
       <Mission />
       <Vision />
-      <Values />
+      {/* <Values /> */}
     </Container>
   )
 }
