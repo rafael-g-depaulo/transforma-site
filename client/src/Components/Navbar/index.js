@@ -13,7 +13,8 @@ const MyNavBar = styled(NavBar)`
   font-size: 20px;
   background-color: #fff;
 
-  z-index: 10;
+  /* z index so high because of leaflet library */
+  z-index: 3000;
 
   position: fixed;
   top: 0;
@@ -49,8 +50,7 @@ const MyToggle = styled(MyNavBar.Toggle)`
   height: 50px;
   position: absolute;
   right: 8px;
-  top: ${parseInt(navHeight)};
-  /* transform: translateY(-50%); */
+  top: 13px;
 `
 
 const MyCollapse = styled(MyNavBar.Collapse)`
