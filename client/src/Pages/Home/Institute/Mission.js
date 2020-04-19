@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { bodySize } from 'Themes/default'
+import { bodySize, LargeBreakpoint, bodyPadding } from 'Themes/default'
 
 import Title from 'Components/Title'
 import Text from 'Components/Text'
@@ -10,23 +10,34 @@ import picture from './mission.png'
 
 const Container = styled.div`
   /* padding-top: 50px; */
+  display: grid;
   max-width: ${bodySize};
-  padding: 0 2.5%;
   margin: auto;
 
-  display: grid;
-  
-  grid-template-columns: minmax(auto, 40%) 1fr;
-  grid-template-rows: 1fr;
-  grid-gap: 30px;
-  grid-template-areas: "picture text-area";
-
   min-height: 200px;
+  
+  grid-template-columns: 1fr;
+  grid-template-rows: 350px auto;
+  grid-gap: 30px;
+  grid-template-areas: "picture" "text-area";
+
+  @media (min-width: ${LargeBreakpoint}) {
+    grid-template-columns: minmax(auto, 40%) 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 30px;
+    grid-template-areas: "picture text-area";
+  }
 
 `
 
 const TextArea = styled.div`
   grid-area: text-area;
+
+  padding: 0 ${bodyPadding};
+  
+  @media (min-width: ${LargeBreakpoint}) {
+    padding: 0;
+  }
 `
 
 const Picture = styled.div`

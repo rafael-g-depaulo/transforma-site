@@ -1,13 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
+import { LargeBreakpoint } from 'Themes/default'
 
 const Container = styled.div`
-  padding: 20px;
-  font-size: 20px;
   text-align: center;
   color: #ffffff;
-
   background-color: #434343;
+  
+  padding: 5px;
+  font-size: 12px;
+
+  @media (min-width: ${LargeBreakpoint}) {
+    padding: 20px;
+    font-size: 20px;
+  }
 `
 
 export const Copyright = ({

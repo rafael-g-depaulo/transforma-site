@@ -4,21 +4,31 @@ import styled from 'styled-components'
 import Title from 'Components/Title'
 import Text from 'Components/Text'
 
-import { bodySize } from 'Themes/default'
+import { bodySize, LargeBreakpoint, bodyPadding } from 'Themes/default'
 import ExperiencesList from './ExperiencesList'
 
 import rawExperiences from './experiences'
 import { Element } from 'react-scroll'
+import useWidth from 'Hooks/useWidth'
 
 const Container = styled(Element)`
   max-width: ${bodySize};
+  padding: ${bodyPadding};
   margin: auto;
-  margin-bottom: 200px;
+  
+  @media (min-width: ${LargeBreakpoint}) {
+    margin-bottom: 200px;
+  }
 `
 
 const MyText = styled(Text)`
-  margin-bottom: 60px;
-  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-top: 15px;
+
+  @media (min-width: ${LargeBreakpoint}) {
+    margin-bottom: 60px;
+    margin-top: 40px;
+  }
 `
 
 const text = ""
@@ -29,6 +39,10 @@ export const Experiences = ({
   experienciasRef,
   ...props
 }) => {
+  
+  // check if is in mobile
+  const width = useWidth()
+  const isMobile = width < parseInt(LargeBreakpoint)
 
   const experiences = rawExperiences.map(({imgs, ...rest}) => ({
     imgs: imgs.map(img => ({
@@ -40,7 +54,7 @@ export const Experiences = ({
 
   return (<Container name="Experiences">
     <Title>Experiências que se somam</Title>
-    <MyText columns="2">{text}</MyText>
+    <MyText columns={isMobile ? 1 : 2}>{text}</MyText>
     <ExperiencesList experiences={experiences} {...props} />
   </Container>)
 }

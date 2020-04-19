@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { bodySize } from 'Themes/default'
+import { bodySize, LargeBreakpoint, bodyPadding } from 'Themes/default'
 
 import Title from 'Components/Title'
 import Text from 'Components/Text'
@@ -11,19 +11,26 @@ import picture from './vision.png'
 const Container = styled.div`
   /* padding-top: 50px; */
   max-width: ${bodySize};
-  padding: 0 2.5%;
   margin: auto;
 
   display: grid;
-  
-  grid-template-columns: 1fr minmax(auto, 30%);
-  grid-template-rows: 1fr;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: 350px auto;
   grid-gap: 30px;
-  grid-template-areas: "text-area picture";
+  grid-template-areas: "picture" "text-area";
+
+  @media (min-width: ${LargeBreakpoint}) {
+    grid-template-columns: 1fr minmax(auto, 30%);
+    grid-template-rows: 1fr;
+    grid-gap: 30px;
+    grid-template-areas: "text-area picture";
+  }
 `
 
 const TextArea = styled.div`
   grid-area: text-area;
+  padding: 0 ${bodyPadding};
 `
 
 const Picture = styled.div`
@@ -34,7 +41,7 @@ const Picture = styled.div`
 
   background-image: url("${props => props.src}");
   background-size: cover;
-  background-position: center;
+  /* background-position: center; */
 `
 
 const MyTitle = styled(Title)`

@@ -3,14 +3,17 @@ import styled from 'styled-components'
 
 import Experience from './Experience'
 
-import { bodySize } from 'Themes/default'
+import { bodySize, LargeBreakpoint } from 'Themes/default'
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(${props => props.cols ?? 2}, 1fr);
   grid-gap: 40px;
   max-width: ${bodySize};
   margin: auto;
+  
+  @media (min-width: ${LargeBreakpoint}) {
+    grid-template-columns: repeat(${props => props.cols ?? 2}, 1fr);
+  }
 `
 
 const List = styled.div`
