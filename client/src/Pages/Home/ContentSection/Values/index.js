@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { bodySize } from 'Themes/default'
+import { bodySize, LargeBreakpoint } from 'Themes/default'
 
 import Title from 'Components/Title'
 
@@ -19,14 +19,25 @@ const TextArea = styled.div`
 
 const ValueContainer = styled.div`  
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 50px 0;
 
-  margin-top: 40px;
+  padding: 0 5px;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 25px 0;
+
+  @media (min-width: ${LargeBreakpoint}) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px 0;
+    margin-top: 40px;
+  }
 `
 
 const MyTitle = styled(Title)`
   text-align: center;
+
+  margin-bottom: 35px;
+  @media (min-width: ${LargeBreakpoint}) {
+    margin-bottom: inherit;
+  }
 `
 
 const values = [
