@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { LargeBreakpoint } from 'Themes/default'
 
 const Container = styled.div`
   font-family: 'Open Sans';
@@ -7,29 +8,48 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  padding: 40px;
   background-color: ${props => props.color ?? "#452778"};
   border-radius: 10px;
   box-shadow: 0 0 35px 0 rgba(3, 4, 2, 0.1);
   border: solid 1px #ffffff;
 
+  padding: 20px;
+
+  @media (min-width: ${LargeBreakpoint}) {
+    padding: 40px;
+  }
+
 `
 
 const Text = styled.span`
-  font-size: 25px;
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
   color: #ffffff;
   margin: 0 auto;
+  
+  font-size: 16px;
+
+  @media (min-width: ${LargeBreakpoint}) {
+    font-size: 25px;
+  }
   `
 const Name = styled(Text)`
-  margin-top: 25px;
+  margin-top: 15px;
+  @media (min-width: ${LargeBreakpoint}) {
+    margin-top: 25px;
+  }
 `
 const Cargo = styled(Text)`
   font-weight: normal;
-  font-size: 20px;
-  margin-top: 15px;
+  
+  margin-top: 0px;
+  font-size: 16px;
+
+  @media (min-width: ${LargeBreakpoint}) {
+    font-size: 20px;
+    margin-top: 16px;
+  }
 `
 
 const Image = styled.img`
@@ -41,11 +61,17 @@ const Image = styled.img`
 `
 
 const Description = styled.p`
-  font-size: 20px;
   line-height: 1;
   text-align: justify;
   color: #ffffff;
-  margin-top: 25px;
+
+  font-size: 16px;
+  margin-top: 8px;
+  
+  @media (min-width: ${LargeBreakpoint}) {
+    font-size: 20px;
+    margin-top: 25px;
+  }
 `
 
 export const Member = ({

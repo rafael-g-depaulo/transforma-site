@@ -1,44 +1,25 @@
 import React from 'react'
+import { Nav } from 'react-bootstrap'
 import styled from 'styled-components'
-import Nav from 'react-bootstrap/Nav'
-import { useCallback } from 'react'
-import { navHeight } from 'Themes/default'
 
-const MySectionList = styled.div`
-  display: flex;
-  font-family: 'Open Sans', sans-serif;
-`
+import SectionLink from './SectionLink'
 
-const Link = styled(Nav.Link)`
-  color: #000;
-
-  &:hover {
-    color: #000;
-  }
-  &:active {
-    color: #000;
-  }
+const Link = styled(Nav)`
+  
 `
 
 export const SectionList = ({
-  institutoRef,
-  gestoresRef,
-  experienciasRef,
-  contatoRef,
+  navHeight,
   ...props
 }) => {
 
-  const scrollTo = useCallback((ref) => {
-    console.log("Asdsadasd")
-    window.scrollTo(0, ref.current.offsetTop - parseInt(navHeight))   
-  }, [])
   return (
-    <MySectionList {...props}>
-      <Link onClick={() => scrollTo(institutoRef)}>O Instituto</Link>
-      <Link onClick={() => scrollTo(gestoresRef)}>Gestores</Link>
-      <Link onClick={() => scrollTo(experienciasRef)}>Experiências que se somam</Link>
-      <Link onClick={() => scrollTo(contatoRef)}>Contato</Link>
-    </MySectionList>
+    <>
+      <SectionLink navHeight={navHeight} as={Link} to="Institute">O Instituto</SectionLink>
+      <SectionLink navHeight={navHeight} as={Link} to="Gestores">Gestores</SectionLink>
+      <SectionLink navHeight={navHeight} as={Link} to="Experiences">Experiências que se somam</SectionLink>
+      <SectionLink navHeight={navHeight} as={Link} to="Contact">Contato</SectionLink>
+    </>
   )
 }
 

@@ -3,17 +3,20 @@ import styled from 'styled-components'
 
 import Text from 'Components/Text'
 import Title from 'Components/Title'
-import { bodySize } from 'Themes/default'
+import { bodySize, LargeBreakpoint, bodyPadding } from 'Themes/default'
+import useWidth from 'Hooks/useWidth'
 
 const Container = styled.div`
   /* padding-top: 50px; */
   max-width: ${bodySize};
   margin: auto;
-  padding: 0 2.5%;
+  padding: 0 ${bodyPadding};
 `
 
 const MyText = styled(Text)`
-  padding-top: 30px;
+  @media (min-width: ${LargeBreakpoint}) {
+    padding-top: 30px;
+  }
 `
 
 const InstituteText = ""
@@ -23,11 +26,14 @@ const InstituteText = ""
 export const Institute = ({
   ...props
 }) => {
+
+  const width = useWidth()
+  const isMobile = width < parseInt(LargeBreakpoint)
+
   return (
     <Container>
       <Title>O Instituto</Title>
-      {/* <MyText >{InstituteText}</MyText> */}
-      <MyText columns="2">{InstituteText}</MyText>
+      <MyText columns={isMobile ? 1 : 2}>{InstituteText}</MyText>
     </Container>
   )
 }

@@ -11,29 +11,36 @@ import e from './ValueLetters/e.png'
 import i from './ValueLetters/i.png'
 import m from './ValueLetters/m.png'
 import s from './ValueLetters/s.png'
+import { LargeBreakpoint } from 'Themes/default'
 
 const letterImages = {
   a, b, c, d, e, i, m, s
 }
 
 const Img = styled.img`
-  height: 2em;
   object-fit: cover;
-
   position: relative;
+
+  height: 2em;
   bottom: 0.4em;
   right: 5px;
 
   z-index: 3;
 `
 
-const Container = styled.div`
-  font-size: 25px;
+const Container = styled.div`  
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  
+  @media (min-width: ${LargeBreakpoint}) {
+    font-size: 25px;
+    justify-content: flex-start;
+  }
 `
 
 const MyText = styled(Text)`
   display: inline;
-  font-size: 25px;
 `
 
 const Icon = ({

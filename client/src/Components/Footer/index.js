@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import Main from './Main'
 import Copyright from './Copyright'
+import { Element } from 'react-scroll'
 
 const Grid = styled.div`
   display: grid;
@@ -10,13 +11,14 @@ const Grid = styled.div`
 `
 
 export const Footer = ({
-  contatoRef,
   ...props
 }) => {
   return (
-    <Grid ref={contatoRef}>
-      <Main />
-      <Copyright />
+    <Grid>
+      <Element name="Contact">
+        <Main />
+        <Copyright />
+      </Element>
     </Grid>
   )
 }

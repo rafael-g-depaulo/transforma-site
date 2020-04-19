@@ -1,19 +1,20 @@
-import React from 'react'
+import React, { useRef, useState, useCallback } from 'react'
 import styled from 'styled-components'
 import { Navbar as NavBar } from 'react-bootstrap'
+import { Link } from 'react-scroll'
 
 import SocialList from './SocialList'
 import SectionList from './SectionList'
 
 import logo from './logo.png'
-import { bodySize, navHeight } from 'Themes/default'
+import { bodySize, navHeight, LargeBreakpoint } from 'Themes/default'
 
 const MyNavBar = styled(NavBar)`
-  background-color: #FFF;
   font-size: 20px;
-  height: ${navHeight};
+  background-color: #fff;
 
-  z-index: 10;
+  /* z index so high because of leaflet library */
+  z-index: 3000;
 
   position: fixed;
   top: 0;
@@ -22,43 +23,114 @@ const MyNavBar = styled(NavBar)`
 
 const Spacer = styled.div`
   display: flex;
+  margin: auto;
   justify-content: space-between;
 
   width: 100%;
   max-width: ${bodySize};
-
-  margin: auto;
-`
-
-const Contain = styled.div`
-  display: flex;
-  width: max-content;
 `
 
 const Img = styled.img`
-  height: 40px;
+  
+  height: 30px;
+  @media (min-width: ${LargeBreakpoint}) {
+    height: 40px;
+    margin: 0;
+    position: static;
+  }
+`
+
+const MyLink = styled(Link)`
+  &:hover {
+    cursor: pointer;
+  }
+`
+
+const MyToggle = styled(MyNavBar.Toggle)`
+  height: 50px;
+  position: absolute;
+  right: 8px;
+  top: 13px;
+`
+
+const MyCollapse = styled(MyNavBar.Collapse)`
+  
+  margin-top: ${navHeight};
+  position: relative;
+  justify-content: center;
+  right: 140px;
+
+  min-width: 100%;
+
+  & > :not(:last-child) {
+    margin-right: 15px;
+  }
+
+  @media (min-width: ${LargeBreakpoint}) {
+    margin: 0;
+    position: static;
+    min-width: auto;
+  }
+`
+
+const MyBrand = styled(MyNavBar.Brand)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: ${navHeight};
+
+  position: relative;
+  @media (min-width: ${LargeBreakpoint}) {
+    position: static;
+  }
 `
 
 export const Navbar = ({
   ...props
 }) => {
+
+  const navRef = useRef(null)
+  const [ navbarHeight, setNavHeight ] = useState(0)
+
+  // set nav height dinamically (used on scroll click)
+  const updateHeight = useCallback(() => {
+    if (!navRef.current) return
+    setTimeout(() => setNavHeight(navRef.current.offsetHeight), 300)    
+  }, [ navRef, setNavHeight ])
+  setTimeout(() => setNavHeight(navRef?.current?.offsetHeight), 30)
+
+
   return (
-    <MyNavBar>
+    <MyNavBar ref={navRef} collapseOnSelect expand="lg" onToggle={updateHeight} >
       <Spacer>
 
-      <MyNavBar.Brand className="justify-self-start">
-        <Img
-          alt=""
-          src={logo}
-          className="d-inline-block align-top"
-          />
-      </MyNavBar.Brand>
+        <MyBrand className="justify-self-start">
+          <MyLink
+            to="Banner"
+            duration={900}
+            delay={0}
+            offset={-navbarHeight}
+            activeClass="active"
+            spy
+            smooth="easeInOutQuint"  
+          >
+            <Img
+              alt=""
+              src={logo}
+              className="d-inline-block align-top"
+            />
+          </MyLink>
+        </MyBrand>
 
-      <Contain>
-        {/* pass refs to section list */}
-        <SectionList {...props}/>
+
+        <MyCollapse id="responsive-navbar-nav" >
+          <SectionList navHeight={navbarHeight} />
+        </MyCollapse>
+
         <SocialList />
-      </Contain>
+
+        <MyToggle aria-controls="responsive-navbar-nav" />
+
       </Spacer>
     </MyNavBar>
   )
