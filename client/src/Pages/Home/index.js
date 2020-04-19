@@ -24,7 +24,7 @@ export const Home = ({
     <Banner />
     <Institute />
     <Divider margin="100px" />
-    {/* <Team /> */}
+    <Team />
     <Divider margin="100px" />
     {/* <Experiences /> */}
     {/* <Footer /> */}

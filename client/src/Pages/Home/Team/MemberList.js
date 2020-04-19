@@ -1,14 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
 import Member from './Member'
-import { bodySize } from 'Themes/default'
+import { bodySize, LargeBreakpoint, bodyPadding } from 'Themes/default'
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   max-width: ${bodySize};
+  padding: ${bodyPadding};
   margin: auto;
+
+  
+  @media (min-width: ${LargeBreakpoint}) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `
 
 const List = styled.div`

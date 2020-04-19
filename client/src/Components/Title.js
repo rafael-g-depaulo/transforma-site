@@ -9,7 +9,7 @@ const MyTitle = styled.h2`
   color: #452778;
   margin-bottom: 15px;
 
-  font-size: 24px;
+  font-size: 28px;
 
   @media (min-width: ${LargeBreakpoint}) {
     font-size: 30px;
