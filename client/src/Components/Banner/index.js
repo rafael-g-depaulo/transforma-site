@@ -6,6 +6,7 @@ import { LargeBreakpoint } from 'Themes/default'
 
 import banner from './Banner.png'
 import mobile from './Mobile.png'
+import { Element } from 'react-scroll'
 
 const Img = styled.img`
   width: 100%;
@@ -19,10 +20,12 @@ export const Banner = ({
   const width = useWidth()
 
   return (
-    <Img
-      src={width >= parseInt(LargeBreakpoint) ? banner : mobile}
-      alt="banner do instituto transforma"
-    />
+    <Element name="Banner">
+      <Img
+        src={width >= parseInt(LargeBreakpoint) ? banner : mobile}
+        alt="banner do instituto transforma"
+      />
+    </Element>
   )
 }
 

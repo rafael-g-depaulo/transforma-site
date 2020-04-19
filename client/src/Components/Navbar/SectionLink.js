@@ -2,13 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import Nav from 'react-bootstrap/Nav'
 import { Link } from 'react-scroll'
-import { navHeight } from 'Themes/default'
 
 const NavLink = styled(Nav.Link)`
   color: #000;
 
   &:hover {
     color: #000;
+    cursor: pointer;
   }
   &:active {
     color: #000;
@@ -21,19 +21,21 @@ const NavLink = styled(Nav.Link)`
 
 export const SectionLink = ({
   children,
+  navHeight,
+  as,
   ...props
 }) => {
   return (
     <Link 
       {...props}
-      duration="900"
-      delay="0"
-      offset={-parseInt(navHeight)}
+      duration={900}
+      delay={0}
+      offset={-navHeight}
       activeClass="active"
       spy
       smooth="easeInOutQuint"
     >
-      <NavLink>{children}</NavLink>
+      <NavLink as={as}>{children}</NavLink>
     </Link>
   )
 }
