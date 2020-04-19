@@ -35,6 +35,7 @@ const Container = styled.div`
   
   @media (min-width: ${LargeBreakpoint}) {
     font-size: 25px;
+    justify-content: flex-start;
   }
 `
 
