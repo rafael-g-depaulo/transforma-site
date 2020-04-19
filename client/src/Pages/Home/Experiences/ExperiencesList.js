@@ -7,11 +7,12 @@ import { bodySize, LargeBreakpoint } from 'Themes/default'
 
 const Grid = styled.div`
   display: grid;
-  grid-gap: 40px;
   max-width: ${bodySize};
   margin: auto;
+  grid-gap: 20px;
   
   @media (min-width: ${LargeBreakpoint}) {
+    grid-gap: 40px;
     grid-template-columns: repeat(${props => props.cols ?? 2}, 1fr);
   }
 `

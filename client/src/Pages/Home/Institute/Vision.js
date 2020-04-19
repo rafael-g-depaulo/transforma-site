@@ -45,7 +45,10 @@ const Picture = styled.div`
 `
 
 const MyTitle = styled(Title)`
-  text-align: left;
+  text-align: center;
+  @media (min-width: ${LargeBreakpoint}) {
+    text-align: left;
+  }
 `
 
 const visionText = ""
