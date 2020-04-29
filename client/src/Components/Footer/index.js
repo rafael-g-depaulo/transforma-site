@@ -7,7 +7,7 @@ import { Element } from 'react-scroll'
 
 const Grid = styled.div`
   display: grid;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto;
 `
 
 export const Footer = ({
