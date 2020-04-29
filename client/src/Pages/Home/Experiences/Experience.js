@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { LargeBreakpoint } from 'Themes/default'
 
 const Container = styled.div`
   font-family: 'Open Sans';
@@ -13,6 +14,7 @@ const Container = styled.div`
   border-radius: 10px;
   box-shadow: 0 0 35px 0 rgba(3, 4, 2, 0.1);
   border: solid 1px #ffffff;
+
 `
 
 const Text = styled.span`
@@ -31,10 +33,14 @@ const Image = styled.img`
 `
 
 const ImageContainer = styled.div`
-  margin-top: 40px;
   display: grid;
   grid-template-columns: repeat(${props => props.cols}, 1fr);
   grid-gap: 20px;
+
+  margin-top: 20px;
+  @media (min-width: ${LargeBreakpoint}) {
+    margin-top: 40px;
+  }
 `
 
 export const Experience = ({

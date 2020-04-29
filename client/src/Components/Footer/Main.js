@@ -23,6 +23,7 @@ const Container = styled.div`
     padding: 40px 70px 10px 70px;
     grid-template-areas: "address contact logo";
     grid-template-columns: 350px 1fr 350px;
+    grid-template-rows: 1fr;
   }
 
 `
