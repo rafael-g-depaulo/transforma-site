@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import SectionLink from './SectionLink'
 
 const Link = styled(Nav)`
-  
+
 `
 
 export const SectionList = ({

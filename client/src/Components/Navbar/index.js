@@ -58,6 +58,7 @@ const MyCollapse = styled(MyNavBar.Collapse)`
   margin-top: ${navHeight};
   position: relative;
   justify-content: center;
+  font-weight: bold;
   right: 140px;
 
   min-width: 100%;
@@ -68,6 +69,11 @@ const MyCollapse = styled(MyNavBar.Collapse)`
 
   @media (min-width: ${LargeBreakpoint}) {
     margin: 0;
+    
+    & > :not(:last-child) {
+      margin-right: 2.4em;
+    }
+  
     position: static;
     min-width: auto;
   }
