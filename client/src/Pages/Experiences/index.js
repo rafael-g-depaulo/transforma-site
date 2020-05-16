@@ -13,12 +13,8 @@ import useWidth from 'Hooks/useWidth'
 
 const Container = styled(Element)`
   max-width: ${bodySize};
-  padding: ${bodyPadding};
+  padding: 50px ${bodyPadding};
   margin: auto;
-  
-  @media (min-width: ${LargeBreakpoint}) {
-    margin-bottom: 200px;
-  }
 `
 
 const MyText = styled(Text)`
@@ -42,7 +38,7 @@ export const Experiences = ({
   
   // check if is in mobile
   const width = useWidth()
-  const isMobile = width < parseInt(LargeBreakpoint)
+  const isMobile = width < parseInt(1300 ?? LargeBreakpoint)
 
   const experiences = rawExperiences.map(({imgs, ...rest}) => ({
     imgs: imgs.map(img => ({
@@ -54,7 +50,7 @@ export const Experiences = ({
 
   return (<Container name="Experiences">
     <Title>Experiências que se somam</Title>
-    <MyText columns={isMobile ? 1 : 2}>{text}</MyText>
+    <MyText columns={isMobile ? 1 : 3}>{text}</MyText>
     <ExperiencesList experiences={experiences} {...props} />
   </Container>)
 }

@@ -1,9 +1,12 @@
 import React from 'react'
 import Routes from 'Routes'
+import Page from 'Components/Page'
 
 export const App = () => {
   return (
-    <Routes />
+    <Page>
+      <Routes />
+    </Page>
   )
 }
 

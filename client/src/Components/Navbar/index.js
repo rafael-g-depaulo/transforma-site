@@ -8,6 +8,7 @@ import SectionList from './SectionList'
 
 import logo from './logo.png'
 import { bodySize, navHeight, LargeBreakpoint } from 'Themes/default'
+import { useEffect } from 'react'
 
 const MyNavBar = styled(NavBar)`
   font-size: 20px;
@@ -92,6 +93,7 @@ const MyBrand = styled(MyNavBar.Brand)`
 `
 
 export const Navbar = ({
+  getHeight = () => {},    // callback used to update parent of new height
   ...props
 }) => {
 
@@ -101,10 +103,14 @@ export const Navbar = ({
   // set nav height dinamically (used on scroll click)
   const updateHeight = useCallback(() => {
     if (!navRef.current) return
-    setTimeout(() => setNavHeight(navRef.current.offsetHeight), 300)    
+    setTimeout(() => setNavHeight(navRef.current.offsetHeight), 300)
   }, [ navRef, setNavHeight ])
   setTimeout(() => setNavHeight(navRef?.current?.offsetHeight), 30)
 
+  // update parent of new height whenever it changes
+  useEffect(() => {
+    getHeight(navbarHeight)
+  }, [navbarHeight, getHeight])
 
   return (
     <MyNavBar ref={navRef} collapseOnSelect expand="lg" onToggle={updateHeight} >
