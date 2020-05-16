@@ -1,22 +1,24 @@
 {
   "name": "transforma-server",
-  "version": "0.1.0",
+  "version": "1.5.3",
   "main": "src/index.js",
   "license": "MIT",
   "scripts": {
-    "start": "yarn dev",
-    "dev": "nodemon --exec babel-node -r ./node_modules/dotenv/config --presets @babel/env ./server/index.js",
-    "prod": "yarn clean && yarn build && yarn serve",
+    "start": "if-env NODE_ENV=production && yarn start:prod || yarn start:dev",
+    "dev": "yarn start:dev",
+    "prod": "yarn start:prod",
+    "start:dev": "nodemon --exec babel-node -r ./node_modules/dotenv/config --presets @babel/env ./server/index.js",
+    "start:prod": "yarn serve",
     "serve": "node -r dotenv/config build",
-    "build": "yarn build-client && yarn build-server",
-    "build-client": "yarn install-client && cd client && yarn build && cd ..",
-    "build-server": "yarn install-server && ./node_modules/.bin/babel ./server -d ./build -s",
-    "install-deps": "yarn install-client && yarn install-server",
-    "install-client": "cd client && yarn install --production=true && cd ..",
-    "install-server": "yarn install --production=true",
-    "clean": "yarn clean-client && yarn clean-server",
-    "clean-server": "rm -rf build && mkdir build",
-    "clean-client": "cd client && rm -rf ./build && cd .."
+    "build": "yarn build:client && yarn build:server",
+    "build:client": "yarn install:client && cd client && yarn build && cd ..",
+    "build:server": "yarn install:server && ./node_modules/.bin/babel ./server -d ./build -s",
+    "install-deps": "yarn install:client && yarn install:server",
+    "install:client": "cd client && yarn install --production=true && cd ..",
+    "install:server": "yarn install --production=true",
+    "clean": "yarn clean:client && yarn clean:server",
+    "clean:server": "rm -rf build && mkdir build",
+    "clean:client": "cd client && rm -rf ./build && cd .."
   },
   "dependencies": {
     "@babel/cli": "^7.8.4",
@@ -26,12 +28,14 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "express-session": "^1.17.0"
+    "express-session": "^1.17.0",
+    "if-env": "^1.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/node": "^7.8.4",
     "nodemon": "^2.0.2",
     "sequelize-cli": "^5.5.1"
-  }
+  },
+  "heroku-run-build-script": true
 }
