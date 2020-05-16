@@ -5,7 +5,6 @@ import Divider from 'Components/Divider'
 
 import Institute from './Institute'
 import Team from './Team'
-import Experiences from './Experiences'
 import { LargeBreakpoint } from 'Themes/default'
 import useWidth from 'Hooks/useWidth'
 
@@ -26,7 +25,7 @@ export const Home = ({
       <Divider margin={dividerMargin} />
       <Team />
       <Divider margin={dividerMargin} />
-      <Experiences />
+      {/* <Experiences /> */}
      {/* </Page> */}
     </>
   )
