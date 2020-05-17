@@ -1,12 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Navbar as NavBar } from 'react-bootstrap'
-import { Link } from 'react-scroll'
 
 import SocialList from './SocialList'
 import SectionList from './SectionList'
+import Brand from './Brand'
 
-import logo from './logo.png'
 import { bodySize, navHeight, LargeBreakpoint } from 'Themes/default'
 
 const MyNavBar = styled(NavBar)`
@@ -28,22 +27,6 @@ const Spacer = styled.div`
 
   width: 100%;
   max-width: ${bodySize};
-`
-
-const Img = styled.img`
-  
-  height: 30px;
-  @media (min-width: ${LargeBreakpoint}) {
-    height: 40px;
-    margin: 0;
-    position: static;
-  }
-`
-
-const MyLink = styled(Link)`
-  &:hover {
-    cursor: pointer;
-  }
 `
 
 const MyToggle = styled(MyNavBar.Toggle)`
@@ -79,18 +62,6 @@ const MyCollapse = styled(MyNavBar.Collapse)`
   }
 `
 
-const MyBrand = styled(MyNavBar.Brand)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: ${navHeight};
-
-  position: relative;
-  @media (min-width: ${LargeBreakpoint}) {
-    position: static;
-  }
-`
-
 export const Display = ({
   navRef,
   updateHeight,
@@ -102,24 +73,7 @@ export const Display = ({
     <MyNavBar ref={navRef} collapseOnSelect expand="lg" onToggle={updateHeight} >
       <Spacer>
 
-        <MyBrand className="justify-self-start">
-          <MyLink
-            to="Banner"
-            duration={900}
-            delay={0}
-            offset={-navbarHeight}
-            activeClass="active"
-            spy
-            smooth="easeInOutQuint"  
-          >
-            <Img
-              alt=""
-              src={logo}
-              className="d-inline-block align-top"
-            />
-          </MyLink>
-        </MyBrand>
-
+        <Brand navbarHeight={navbarHeight} />
 
         <MyCollapse id="responsive-navbar-nav" >
           <SectionList navHeight={navbarHeight} />
