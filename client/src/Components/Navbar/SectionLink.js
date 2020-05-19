@@ -12,6 +12,8 @@ const animationDelay = 200
 const NavLink = styled(Nav.Link)`
   transition: ${animationDelay}ms ease-in-out;
   color: #000;
+  /* font-size: 20px; */
+  width: max-content;
 
   &:hover {
     cursor: pointer;
@@ -21,7 +23,7 @@ const NavLink = styled(Nav.Link)`
     border-bottom: 3px solid ${underlineColor};
   }
 
-  &.active {
+  &.active:not(.animation-exit-done) {
     border-bottom: 5px solid ${underlineColor};
   }
 

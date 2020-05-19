@@ -4,5 +4,6 @@ export const bodyPadding = "5%"
 
 export const MobileMax = "750px"
 export const LargeBreakpoint = "992px"
+export const LargeBreakpointMax = "991px"
 
 export const underlineColor = "#ff6400"

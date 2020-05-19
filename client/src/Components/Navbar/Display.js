@@ -6,7 +6,7 @@ import SocialList from './SocialList'
 import SectionList from './SectionList'
 import Brand from './Brand'
 
-import { bodySize, navHeight, LargeBreakpoint } from 'Themes/default'
+import { bodySize, navHeight, LargeBreakpoint, LargeBreakpointMax } from 'Themes/default'
 
 const MyNavBar = styled(NavBar)`
 
@@ -41,22 +41,24 @@ const MyToggle = styled(MyNavBar.Toggle)`
 
 const MyCollapse = styled(MyNavBar.Collapse)`
   
-  margin-top: ${navHeight};
   position: relative;
   justify-content: center;
   right: 140px;
 
   min-width: 100%;
 
-  & > :not(:last-child) {
-    margin-right: 15px;
+  @media (max-width: ${LargeBreakpointMax}) {  
+    margin-top: ${navHeight};
+    & > :not(:last-child) {
+      margin-right: 15px;
+    }
   }
 
   @media (min-width: ${LargeBreakpoint}) {
     margin: 0;
     
     & > :not(:last-child) {
-      margin-right: 2.4em;
+      margin-right: 1.6em;
     }
   
     position: static;
