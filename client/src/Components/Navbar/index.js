@@ -1,6 +1,7 @@
 import React, { useRef, useState, useCallback, useEffect } from 'react'
 
 import Display from './Display'
+import { routePaths } from 'Routes'
 
 export const Navbar = ({
   getHeight = () => {},    // callback used to update parent of new height
@@ -23,7 +24,13 @@ export const Navbar = ({
   }, [navbarHeight, getHeight])
 
   // active page
-  const activePage = "Institute"
+  let activePage = undefined
+  // if in a page, have that page as the active one for the nav links (it underlines it and stuff)
+  for (const page in routePaths)
+  if (routePaths[page].includes(window.location.pathname)) {
+    activePage = page
+    break
+  }
 
   return (
     <Display

@@ -21,8 +21,8 @@ const NavLink = styled(Nav.Link)`
     border-bottom: 3px solid ${underlineColor};
   }
 
-  .active > & {
-    /* color: red; */
+  &.active {
+    border-bottom: 5px solid ${underlineColor};
   }
 
 

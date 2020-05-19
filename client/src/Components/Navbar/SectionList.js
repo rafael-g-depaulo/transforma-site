@@ -13,8 +13,6 @@ export const SectionList = ({
   ...props
 }) => {
 
-  console.log(activePage, "!!!!")
-
   return (
     <>
       <SectionLink className={activePage === "Institute"    ? "active" : ""} navHeight={navHeight} as={Link} to="Institute">O Instituto</SectionLink>
