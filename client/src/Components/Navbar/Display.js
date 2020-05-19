@@ -10,8 +10,7 @@ import { bodySize, navHeight, LargeBreakpoint, LargeBreakpointMax } from 'Themes
 
 const MyNavBar = styled(NavBar)`
 
-  box-shadow: 16px 9.5px 15px 0 rgba(3, 4, 2, 0.1);
-
+  box-shadow: 0px 2px 16px 3px rgba(3, 4, 2, 0.1);
   font-size: 20px;
   background-color: #fff;
 
