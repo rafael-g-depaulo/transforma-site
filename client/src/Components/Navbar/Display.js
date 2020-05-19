@@ -9,6 +9,9 @@ import Brand from './Brand'
 import { bodySize, navHeight, LargeBreakpoint } from 'Themes/default'
 
 const MyNavBar = styled(NavBar)`
+
+  box-shadow: 16px 9.5px 15px 0 rgba(3, 4, 2, 0.1);
+
   font-size: 20px;
   background-color: #fff;
 
@@ -16,7 +19,7 @@ const MyNavBar = styled(NavBar)`
   z-index: 3000;
 
   position: fixed;
-  top: 0;
+  top: -1px;
   width: 100%;
 `
 
@@ -41,7 +44,6 @@ const MyCollapse = styled(MyNavBar.Collapse)`
   margin-top: ${navHeight};
   position: relative;
   justify-content: center;
-  font-weight: bold;
   right: 140px;
 
   min-width: 100%;
@@ -66,6 +68,7 @@ export const Display = ({
   navRef,
   updateHeight,
   navbarHeight,
+  activePage,
   ...props
 }) => {
   return (
@@ -76,7 +79,7 @@ export const Display = ({
         <Brand navbarHeight={navbarHeight} />
 
         <MyCollapse id="responsive-navbar-nav" >
-          <SectionList navHeight={navbarHeight} />
+          <SectionList activePage={activePage} navHeight={navbarHeight} />
         </MyCollapse>
 
         <SocialList />

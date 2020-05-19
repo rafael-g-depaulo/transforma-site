@@ -1,30 +1,56 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import Nav from 'react-bootstrap/Nav'
+import { underlineColor } from 'Themes/default'
+
 import { Link } from 'react-scroll'
+import { CSSTransition } from 'react-transition-group'
+
+import Nav from 'react-bootstrap/Nav'
+
+const animationDelay = 200
 
 const NavLink = styled(Nav.Link)`
+  transition: ${animationDelay}ms ease-in-out;
   color: #000;
 
   &:hover {
-    color: #000;
     cursor: pointer;
+    border-bottom: 2px solid ${underlineColor};
   }
   &:active {
-    color: #000;
+    border-bottom: 3px solid ${underlineColor};
   }
 
   .active > & {
     /* color: red; */
   }
+
+
+  /* animation stuff */
+
+  &.animation-enter, &.animation-exit-done {
+    /* about to start to enter */
+    /* or done exiting */
+  }
+  &.animation-enter-done, &.animation-exit {
+    /* done entering */
+    /* or about to exit */
+    border-bottom: 5px solid ${underlineColor};
+    font-weight: bold;
+  }
+  
 `
 
 export const SectionLink = ({
   children,
   navHeight,
+  className,
   as,
   ...props
 }) => {
+
+  const [ active, setActive ] = useState(false)
+
   return (
     <Link 
       {...props}
@@ -34,8 +60,16 @@ export const SectionLink = ({
       activeClass="active"
       spy
       smooth="easeInOutQuint"
+      onSetActive={() => setActive(true)}
+      onSetInactive={() => setActive(false)}
     >
-      <NavLink as={as}>{children}</NavLink>
+      <CSSTransition
+        in={active}
+        timeout={animationDelay}
+        classNames="animation"
+      >
+      <NavLink as={as} className={className}>{children}</NavLink>
+      </CSSTransition>
     </Link>
   )
 }

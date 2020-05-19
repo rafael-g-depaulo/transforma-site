@@ -22,11 +22,15 @@ export const Navbar = ({
     getHeight(navbarHeight)
   }, [navbarHeight, getHeight])
 
+  // active page
+  const activePage = "Institute"
+
   return (
     <Display
       navRef={navRef}
       updateHeight={updateHeight}
       navbarHeight={navbarHeight}
+      activePage={activePage}
     />
   )
 }
