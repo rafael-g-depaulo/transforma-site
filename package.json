@@ -6,9 +6,9 @@
   "scripts": {
     "start": "yarn dev",
     "dev": "nodemon --exec babel-node -r ./node_modules/dotenv/config --presets @babel/env ./server/index.js",
-    "prod": "yarn clean && yarn build && yarn serve",
+    "prod": "yarn serve",
     "serve": "node -r dotenv/config build",
-    "build": "yarn build-client && yarn build-server",
+    "build": "yarn build-client & yarn build-server",
     "build-client": "yarn install-client && cd client && yarn build && cd ..",
     "build-server": "yarn install-server && ./node_modules/.bin/babel ./server -d ./build -s",
     "install-deps": "yarn install-client && yarn install-server",
