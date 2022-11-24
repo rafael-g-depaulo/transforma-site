@@ -12,8 +12,8 @@
     "build-client": "yarn install-client && cd client && yarn build && cd ..",
     "build-server": "yarn install-server && ./node_modules/.bin/babel ./server -d ./build -s",
     "install-deps": "yarn install-client && yarn install-server",
-    "install-client": "cd client && yarn install --production=true && cd ..",
-    "install-server": "yarn install --production=true",
+    "install-client": "cd client && yarn install && cd ..",
+    "install-server": "yarn install",
     "clean": "yarn clean-client && yarn clean-server",
     "clean-server": "rm -rf build && mkdir build",
     "clean-client": "cd client && rm -rf ./build && cd .."
@@ -33,5 +33,8 @@
     "@babel/node": "^7.8.4",
     "nodemon": "^2.0.2",
     "sequelize-cli": "^5.5.1"
+  },
+  "engines": {
+    "node": "12.x"
   }
 }
